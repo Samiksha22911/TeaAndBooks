@@ -10,6 +10,7 @@ For reference while testing friend-related features, search for users like:
 - becca
 
 ## Features
+---
 
 ### Authentication
 
@@ -79,25 +80,34 @@ For reference while testing friend-related features, search for users like:
 
 ## Folder Structure
 
-```bash
-entwined/
+TeaAndBooks/
 │
-├── client/
-│   ├── src/
+├── entwined-web/
 │   ├── public/
-│   └── package.json
+│   ├── src/
+│   ├── .env
+│   ├── package.json
+│   ├── vite.config.js
+│   └── eslint.config.js
 │
-├── server/
+├── entwined-server/
 │   ├── config/
+│   ├── controllers/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
 │   ├── socket/
 │   ├── uploads/
+│   ├── utils/
+│   ├── .env
+│   ├── firebaseKey.json
+│   ├── package.json
 │   └── server.js
 │
+├── AUTH_AND_FILE_SHARING.md
+├── CHAT_IMPLEMENTATION.md
+├── LICENSE
 └── README.md
-```
 
 ---
 
@@ -106,8 +116,8 @@ entwined/
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/entwined.git
-cd entwined
+git clone https://github.com/your-username/TeaAndBooks.git
+cd TeaAndBooks
 ```
 
 ---
@@ -115,11 +125,11 @@ cd entwined
 ## Backend Setup
 
 ```bash
-cd server
+cd entwined-server
 npm install
 ```
 
-Create a `.env` file inside the `server` directory.
+Create a `.env` file inside the `entwined-server` directory.
 
 ```env
 PORT=5000
@@ -138,7 +148,7 @@ CLOUDINARY_API_KEY=your_cloudinary_key
 CLOUDINARY_API_SECRET=your_cloudinary_secret
 ```
 
-Place your `firebaseKey.json` file inside the `server` root directory.
+Place your `firebaseKey.json` file inside the `entwined-server` root directory.
 
 Start the backend:
 
@@ -151,11 +161,11 @@ npm run dev
 ## Frontend Setup
 
 ```bash
-cd client
+cd ../entwined-web
 npm install
 ```
 
-Create a `.env` file inside the `client` directory.
+Create a `.env` file inside the `entwined-web` directory.
 
 ```env
 VITE_API_URL=http://localhost:5000
