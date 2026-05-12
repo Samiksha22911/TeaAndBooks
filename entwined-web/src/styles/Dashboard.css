@@ -1997,3 +1997,48 @@
 
   overflow-x: hidden;
 }
+.danger-button {
+  background: #b91c1c !important;
+  color: #fff !important;
+  border: 1px solid #ef4444 !important;
+}
+
+.danger-button:hover:not(:disabled) {
+  background: #991b1b !important;
+}
+
+.danger-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.danger-modal {
+  width: min(90vw, 480px);
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.danger-modal h3 {
+  margin: 0 0 0.75rem 0;
+}
+
+.danger-modal p {
+  margin: 0;
+  color: #fca5a5;
+  line-height: 1.5;
+}
+
+.danger-modal-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}

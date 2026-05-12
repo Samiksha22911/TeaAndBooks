@@ -8,6 +8,8 @@ export default function ProfileHeader({
   onEditToggle,
   draftProfile,
   setDraftProfile,
+  onDeleteAccountClick,
+  deleteAccountLoading,
 }) {
   const resolvedImage = profile.profileImage || "https://ui-avatars.com/api/?name=Reader&background=1f2937&color=ffffff";
   const safeBio = profile.bio || "No bio added yet";
@@ -54,6 +56,14 @@ export default function ProfileHeader({
                 Save
               </button>
             )}
+            <button
+              type="button"
+              className="danger-button"
+              onClick={onDeleteAccountClick}
+              disabled={deleteAccountLoading}
+            >
+              {deleteAccountLoading ? "Deleting..." : "Delete Account"}
+            </button>
           </>
         ) : (
           <button type="button" onClick={onFollowToggle}>
