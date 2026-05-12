@@ -78,8 +78,10 @@ For reference while testing friend-related features, search for users like:
 
 ---
 
+
 ## Folder Structure
 
+```txt
 TeaAndBooks/
 │
 ├── entwined-web/
@@ -108,6 +110,7 @@ TeaAndBooks/
 ├── CHAT_IMPLEMENTATION.md
 ├── LICENSE
 └── README.md
+```
 
 ---
 
