@@ -34,16 +34,45 @@ export default function Dashboard() {
   // 1. Sync activeTab with URL changes
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+    let isMounted = true;
 
-    if (storedUser) {
-      try {
-        const parsedUser = JSON.parse(storedUser);
-        setCurrentUser(parsedUser.user || parsedUser);
-      } catch (err) {
-        console.log(err);
+    const loadCurrentUser = async () => {
+      const storedUser = localStorage.getItem("user");
+
+      if (storedUser) {
+        try {
+          const parsedUser = JSON.parse(storedUser);
+
+          if (isMounted) {
+            setCurrentUser(parsedUser.user || parsedUser);
+          }
+          return;
+        } catch (err) {
+          console.log(err);
+        }
       }
-    }
+
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        return;
+      }
+
+      try {
+        const res = await api.get("/api/auth/me");
+        if (isMounted) {
+          setCurrentUser(res.data.user || res.data);
+        }
+      } catch (err) {
+        console.error("Failed to load current user", err);
+      }
+    };
+
+    loadCurrentUser();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   // 2. Fetch initial social data
