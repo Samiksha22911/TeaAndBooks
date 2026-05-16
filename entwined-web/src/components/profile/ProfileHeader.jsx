@@ -61,10 +61,6 @@ export default function ProfileHeader({
               </button>
             )}
             <div className="delete-account-panel">
-              <div className="delete-account-copy">
-                <p>Need to leave?</p>
-                <span>This permanently removes your profile and account data.</span>
-              </div>
               <button
                 type="button"
                 className="danger-button"
