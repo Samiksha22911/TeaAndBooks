@@ -81,6 +81,7 @@ For reference while testing friend-related features, search for users like:
 
 ## Folder Structure
 
+```bash
 ```txt
 TeaAndBooks/
 │
@@ -164,7 +165,7 @@ npm run dev
 ## Frontend Setup
 
 ```bash
-cd ../entwined-web
+cd entwined-web
 npm install
 ```
 
